@@ -34,6 +34,7 @@
     public function query($sql){
         $this->connection = mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
         $result = mysqli_query($this->connection,$sql);
+        //var_dump($result);
         $confirm = $this->confirm_query($result);
         if($confirm){
             return $result;

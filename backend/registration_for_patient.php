@@ -62,3 +62,49 @@
 
 
 ?>
+<?php 
+        // import the file
+        require_once('config.php');
+        require_once('database.php');
+        require_once('function.php');
+        
+        // registration starts here
+
+        class PatientRegistration{
+
+            function __construct($name,$doctor_name,$mobile,$password){
+                //$this->patient_id = $patient_id;
+                $this->name = $name;
+                $this->doctor_name = $doctor_name;
+                $this->mobile = $mobile;
+            
+                $this->password = $password;
+            }
+
+            // first find if the patient is already registered
+            // then apply this function
+            // apply the validate patient
+
+            public function insert_data(){
+                global $connection;
+                if($this->name && $this->doctor_name && $this->mobile && $this->password){
+                
+                $insertsql = "INSERT INTO patient (name, doctor_name,mobile,password) VALUES ('$this->name', '$this->doctor_name','$this->mobile','$this->password');";
+               // echo $insertsql;
+                $connection->query($insertsql);
+
+            }
+        }
+
+
+            
+        }
+
+
+
+// test it check your time settings of
+
+//$reg = new PatientRegistration('abasssssssss','Jashim uddin','42665423434364342','11954qweqwe6261212');
+//$reg->insert_data();
+
+?>
