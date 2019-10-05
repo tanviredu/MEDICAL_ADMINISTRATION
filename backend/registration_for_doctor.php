@@ -56,9 +56,14 @@
 
 //$unix_time = strtotime($time);
 //$time= date("Y-m-d H:i:s",$unix_time);
+    
 
 
-
-
-
+?>
+<?php 
+        require_once('config.php');
+        require_once('database.php');
+        require_once('function.php');
+        // before starting see the sql dump and make the same database
+        // its a home work
 ?>
